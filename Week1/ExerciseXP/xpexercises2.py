@@ -145,25 +145,34 @@ while True:
 #Print the total ticket cost.
 
 family_dict = {}
+bill = 0
 
 while True:
     
     print("To finish, type ´Finish´")
-    user_name = str(input("Whats Your Name?  ")).lower()
+    user_name = str(input("Whats Your Name?  ")).lower().strip()
     if user_name == "finish":
         break 
     
-    user_age = input(f"Type {user_name.title()} Age")  
+    user_age = input(f"Type {user_name.title()} Age")
     try:
         user_age = int(user_age)
+        if user_age < 3:
+            price = 0
+        elif user_age < 12:
+            price = 10
+        else:
+            price = 12
+        bill += price
         family_dict[user_name] = user_age
+
     except ValueError:
         print("Try Again, Type a Number... ")
         continue
     
     
     
-print(family_dict)
+print(f"Your Total Will Be: ${bill}, How woud you like to pay?")
 
     
 
