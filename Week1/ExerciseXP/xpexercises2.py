@@ -135,6 +135,41 @@ while True:
         break
 
 
+#Instructions:
+
+#Ask for the age of each person in a family who wants to buy a movie ticket.
+#Calculate the total cost based on the following rules:
+#Free for people under 3.
+#$10 for people aged 3 to 12.
+#$15 for anyone over 12.
+#Print the total ticket cost.
+
+family_dict = {}
+
+while True:
+    
+    print("To finish, type ´Finish´")
+    user_name = str(input("Whats Your Name?  ")).lower()
+    if user_name == "finish":
+        break 
+    
+    user_age = input(f"Type {user_name.title()} Age")  
+    try:
+        user_age = int(user_age)
+        family_dict[user_name] = user_age
+    except ValueError:
+        print("Try Again, Type a Number... ")
+        continue
+    
+    
+    
+print(family_dict)
+
+    
 
 
+        
+     
+
+    
 
