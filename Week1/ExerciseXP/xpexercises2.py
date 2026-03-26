@@ -75,6 +75,17 @@ while max(new_list) < 5.5:
 print(new_list)
 
 
+#Write a for loop to print all numbers from 1 to 20, inclusive.
+#Write another for loop that prints every number from 1 to 20 where the index is even.
+
+onetotwenty = range(1,21)
+for num in onetotwenty:
+    print(num)
+
+for nums in onetotwenty:
+    if nums % 2 == 0:
+        print(nums)
+
 
 #Use an input to ask the user to enter their name.
 #Using a while True loop, check if the user gave a proper name (not digits and at least 3 letters long)
@@ -86,7 +97,7 @@ print(new_list)
 
 while True:
     user_name = input("Whats Your Name:  ")
-    if not user_name.isalpha():
+    if not user_name.isalpha() and len(user_name) >= 3:
         print("Try Again, No numbers or special characters this time...")
     else:
         print(f"Thank You, {user_name.title()}")
