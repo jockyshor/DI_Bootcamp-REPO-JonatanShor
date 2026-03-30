@@ -108,3 +108,176 @@ def describe_city(city, country="unknown"): ###otra opcion para hacerlo y poner 
 
 
 
+def random_func(your_num):
+    random_num = random.randint(1,100)
+    if random_num == your_num:
+        print("WOW, you guessed the secret number, thats 1 in 100 chance")        
+    else:
+        print(f"better luck next time, {your_num} is NOT  the secret number. the secret number is: {random_num} ")
+        
+
+while True:
+    try:
+        users_guess = int(input("Guess a number between 1 and 100:  "))
+        if not (1 <= users_guess <= 100):
+            raise ValueError("The number must be between 1 and 100")
+        else:
+            break
+    except ValueError as variableforvalueerror:
+        print("Try Again, Your Number Should be between 1 and 100")
+    
+
+random_func(users_guess)
+
+
+
+#Step 1: Define a Function with Parameters
+
+#Define a function called make_shirt().
+#This function should accept two parameters: size and text.
+
+
+#Step 2: Print a Summary Message
+
+#Set up the function to display a sentence summarizing the shirt’s size and message.
+
+
+#Step 3: Call the Function
+
+
+
+#Step 4: Modify the Function with Default Values
+
+#Modify the make_shirt() function so that size has a default value of “large” and text has a default value of “I love Python”.
+
+
+#Step 5: Call the Function with Default and Custom Values
+
+#Call make_shirt() to make a large shirt with the default message.
+#Call make_shirt() to make a medium shirt with the default message.
+#Call make_shirt() to make a shirt of any size with a different message.
+
+
+#Step 6 (Bonus): Keyword Arguments
+
+#Call make_shirt() using keyword arguments (e.g., make_shirt(size="small", text="Hello!")).
+
+def make_shirt(size, text):
+    print(f"The size of the shirt is {size}, and the text is {text}")
+
+make_shirt("large", "I Love Python")
+
+###
+
+def make_shirt(size="Large", text="I love Python"):
+     print(f"The size of the shirt is {size}, and the text is {text}")
+
+make_shirt(size = "large")
+make_shirt(size = "medium")
+make_shirt(text="Different Message")
+make_shirt(size="small", text="Hello!")
+
+
+#Step 1: Create a List of Magician Names
+
+#Create a list called magician_names with the given names:
+#['Harry Houdini', 'David Blaine', 'Criss Angel']
+
+
+#Step 2: Create a Function to Display Magicians
+
+#Create a function called show_magicians() that takes the magician_names list as a parameter.
+#Inside the function, iterate through the list and print each magician’s name.
+
+
+#Step 3: Create a Function to Modify the List
+
+#Create a function called make_great() that takes the magician_names list as a parameter.
+#Inside the function, use a for loop to iterate through the list and add “the Great” before each magician’s name.
+
+
+#Step 4: Call the Functions
+
+#Call make_great() to modify the list.
+#Call show_magicians() to display the modified list.
+
+
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+
+def show_magicians(listvariable):
+    for magician in listvariable:
+        print(magician)
+
+show_magicians(magician_names)
+
+
+def  make_great(listvariable):
+    for index, magic in enumerate(listvariable):
+        listvariable[index]=(f"{magic} the Great")
+    
+
+make_great(magician_names)
+show_magicians(magician_names)
+
+
+
+#Step 1: Create the get_random_temp() Function
+
+#Create a function called get_random_temp() that returns a random integer between -10 and 40 degrees Celsius.
+
+
+#Step 2: Create the main() Function
+
+#Create a function called main(). Inside this function:
+#Call get_random_temp() to get a random temperature.
+#Store the temperature in a variable and print a friendly message like:
+#“The temperature right now is 32 degrees Celsius.”
+
+
+#Step 3: Provide Temperature-Based Advice
+
+#Inside main(), provide advice based on the temperature:
+#Below 0°C: e.g., “Brrr, that’s freezing! Wear some extra layers today.”
+#Between 0°C and 16°C: e.g., “Quite chilly! Don’t forget your coat.”
+#Between 16°C and 23°C: e.g., “Nice weather.”
+#Between 24°C and 32°C: e.g., “A bit warm, stay hydrated.”
+#Between 32°C and 40°C: e.g., “It’s really hot! Stay cool.”
+
+
+#Step 4: Floating-Point Temperatures (Bonus)
+
+#Modify get_random_temp() to return a random floating-point number using random.uniform() for more accurate temperature values.
+
+
+#Step 5: Month-Based Seasons (Bonus)
+
+#Instead of directly generating a random temperature, ask the user for a month (1-12) and determine the season using if/elif conditions.
+#Modify get_random_temp() to return temperatures specific to each season.
+
+def get_random_temp():
+   return random.randint(-10,40)
+
+def main():
+    random_temp = get_random_temp()
+    print(f"The Temperature right now is {random_temp} degrees celcius")
+    if random_temp < 0:
+        print("Brrr, thats freezing! Wear some extra layers today")
+    elif 0 <= random_temp >= 15:
+        print("Quite chilly! Don’t forget your coat.")
+    elif 16<= random_temp >= 23:
+        print("Nice weather.")
+    elif 24<= random_temp >= 32:
+        print("A bit warm, stay hydrated")
+    else:
+        print("It’s really hot! Stay cool.")
+
+
+
+main()
+
+def get_random_tempv2():
+   return round(random.uniform(-10,40),2)
+
+get_random_tempv2()
+
+#
