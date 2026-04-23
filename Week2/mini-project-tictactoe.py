@@ -47,7 +47,6 @@ def ask_col():
 
 
 
-###COMPLETAR ESTA FUNCION
 def player_input():
     while True:
         row_input = ask_row()-1
