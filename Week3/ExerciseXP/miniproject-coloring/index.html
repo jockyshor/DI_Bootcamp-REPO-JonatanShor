@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette Only</title>
+    <style>
+        /* Basic reset and screen filling */
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+            background-color: #a0a0a0; /* Darker grey background for the container */
+            border: 2px solid #505050; /* Dark overall border */
+        }
+
+        /* Sidebar: Solid light-grey background */
+        #sidebar {
+            width: 120px; /* Slightly wider to match image proportions */
+            height: 100vh;
+            background-color: #d0d0d0; /* Match background color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            border-right: 1px solid #505050; /* Add a right border */
+        }
+
+        #clear-button {
+            padding: 8px;
+            width: 90%;
+            background-color: #f0f0f0; /* Off-white but greyish */
+            color: black;
+            border: 2px solid black;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: sans-serif;
+            box-shadow: inset 1px 1px 1px rgba(255,255,255,0.8), inset -1px -1px 1px rgba(0,0,0,0.1);
+        }
+
+        #clear-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Palette Container: A single wide column */
+        #palette-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        /* Color-swatch styles */
+        .color-swatch {
+            width: 100%;
+            height: 30px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        /* Row styles within the single wide column, each with three swatches */
+        .swatch-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* Swatches within a row */
+        .swatch-row .color-swatch {
+            width: calc(33.33% - 5.33px); /* Match previous proportions */
+        }
+
+
+        #grid-canvas {
+            display: grid;
+            /* Creates 10px columns as long as there is space */
+            grid-template-columns: repeat(auto-fill, 10px);
+            /* Sets each row to exactly 10px */
+            grid-auto-rows: 10px;
+            overflow-y: auto;
+            width: calc(100vw - 120px);
+            
+            background-color: white;
+            overflow: hidden; /* Keeps the grid from scrolling the whole page */
+            border: 1px solid #808080;
+            margin: 2px;
+        }
+
+        /* The individual squares */
+        .pixel {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border: 0.1px solid #d3d3d3; /* Light grey border */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <button id="clear-button">Clear</button>
+
+        <div id="palette-container">
+            <div class="swatch-row">
+                <div class="color-swatch" style="background-color: #e74c3c;"></div>
+                <div class="color-swatch" style="background-color: #e67e22;"></div>
+                <div class="color-swatch" style="background-color: #f39c12;"></div>
+            </div>
+            <div class="swatch-row">
+                <div class="color-swatch" style="background-color: #f1c40f;"></div>
+                <div class="color-swatch" style="background-color: #2ecc71;"></div>
+                <div class="color-swatch" style="background-color: #27ae60;"></div>
+            </div>
+            <div class="swatch-row">
+                <div class="color-swatch" style="background-color: #1abc9c;"></div>
+                <div class="color-swatch" style="background-color: #3498db;"></div>
+                <div class="color-swatch" style="background-color: #2980b9;"></div>
+            </div>
+            <div class="swatch-row">
+                <div class="color-swatch" style="background-color: #1a237e;"></div>
+                <div class="color-swatch" style="background-color: #4a148c;"></div>
+                <div class="color-swatch" style="background-color: #311b92;"></div>
+            </div>
+            <div class="swatch-row">
+                <div class="color-swatch" style="background-color: #ff91cc;"></div>
+                <div class="color-swatch" style="background-color: #ffc2cd;"></div>
+                <div class="color-swatch" style="background-color: #bdc3c7;"></div>
+            </div>
+            <div class="swatch-row">
+                <div class="color-swatch" style="background-color: #7f8c8d;"></div>
+                <div class="color-swatch" style="background-color: black;"></div>
+                <div class="color-swatch" style="background-color: white;"></div>
+            </div>
+        </div>
+    </div>
+ <div id="grid-canvas">
+
+ </div>
+    
+<script src="script.js"></script>
+</body>
+
+</html>
