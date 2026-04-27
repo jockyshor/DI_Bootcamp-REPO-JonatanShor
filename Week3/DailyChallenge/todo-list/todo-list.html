@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>To-Do-List</title>
+</head>
+<style>
+body{background-color: darkorange;}
+#add{background-color: grey;
+}
+
+</style>
+<body>
+    
+<br>
+<br>
+<br>
+<br>
+    <div class="contain">
+    <div class="row">
+    <div class="col l6 offset-l3 white" id="theAddBar"> 
+        <input type="text" class="flow-text" id="addbar"></input>
+        <label for="addbar">Type to add your task</label>
+        <button class="btn waves-effect waves-light right" type="submit" id = "addButton">Add</button>
+    </div>
+     <div class="col l6 offset-l3 white"> 
+        <br>
+    </div>
+
+    <div class="row">
+        <br>
+       
+    </div>
+    <div class="row">
+        <br>
+       
+    </div>
+    <div class="row">
+        <br>
+       
+    </div>
+
+    <div class="row">
+        <div class="col l6 offset-l3 white" id="thetasklist">
+            <h3 class="center flow-text">Your Tasks</h3>
+            <div class="center align">
+                <ul id="unorderedList">
+                
+                    
+                </ul>
+            </div> 
+    </div>
+</div>
+<script src="todo-script.js"></script>
+</body>
+</html>
