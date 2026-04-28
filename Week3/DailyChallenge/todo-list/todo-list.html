@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>To-Do-List</title>
 </head>
 <style>
@@ -21,9 +22,11 @@ body{background-color: darkorange;}
     <div class="contain">
     <div class="row">
     <div class="col l6 offset-l3 white" id="theAddBar"> 
+        <form action="submit">
         <input type="text" class="flow-text" id="addbar"></input>
         <label for="addbar">Type to add your task</label>
         <button class="btn waves-effect waves-light right" type="submit" id = "addButton">Add</button>
+        </form> 
     </div>
      <div class="col l6 offset-l3 white"> 
         <br>
@@ -44,7 +47,7 @@ body{background-color: darkorange;}
 
     <div class="row">
         <div class="col l6 offset-l3 white" id="thetasklist">
-            <h3 class="center flow-text">Your Tasks</h3>
+            <h3 class="center flow-text">Your Tasks:</h3>
             <div class="center align">
                 <ul id="unorderedList">
                 
