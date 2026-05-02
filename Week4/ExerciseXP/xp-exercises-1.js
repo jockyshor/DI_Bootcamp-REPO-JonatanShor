@@ -12,8 +12,9 @@ function funcOne() {
 
 // #1.1 - run in the console:
 funcOne()
-// #1.2 What will happen if the variable is declared -- i think it will throw a reference error, because a is only declared inside the function, and cannot be accesed in the global scope
-// with const instead of let ? --- still, will throw an error because it is declared inside the function, and cannot change the value of const variables...
+// #1.2 What will happen if the variable is declared -- i think it will throw a TypeError, because "a" is only declared inside the function, and cannot be accesed in the global scope.
+// "a" will be 3
+// with const instead of let ? --- still, will throw an error because it is declared inside the function, and also cannot change the value of const variables...
 
 //#2
 let a = 0;
@@ -29,7 +30,7 @@ function funcThree() {
 funcThree()
 funcTwo()
 funcThree()
-// #2.2 What will happen if the variable is declared 
+// #2.2 What will happen if the variable is declared  --- after running the functions in that order, the value of "a" will be 5
 // with const instead of let ?
 // --- you will get an error because you cannot change the value of a variable declared with const
 
@@ -91,7 +92,8 @@ Console.log the experiencePoints variable.*/
 
 experiencePoints = winBattle() === true ? experiencePoints = 10 : experiencePoints = 1;
 console.log(experiencePoints)
-
+// or
+let experiencePoints = winBattle() ? 10 : 1;
 /*🌟 Exercise 3 : Is it a string ?
 Instructions
 Write a JavaScript arrow function that checks whether the value of the argument passed, is a string or not. The function should return true or false
@@ -116,7 +118,7 @@ Instructions
 Create a one line function (ie. an arrow function) that receives two numbers as parameters and returns the sum.
 */
 
-let sum = (a,b)=>{return a+b};
+const sum = (a,b)=>{return a+b};
 
 /*🌟 Exercise 5 : Kg and grams
 Instructions
@@ -127,19 +129,19 @@ Then, use function expression and invoke it.
 Write in a one line comment, the difference between function declaration and function expression.
 Finally, use a one line arrow function and invoke it.*/
 
-function weight(kilos){
-grams = kilos * 1000
+function weight1(kilos){
+let grams = kilos * 1000
     return grams
 }
 
-weight(3)
+weight1(3)
 
-let weight = (kilos)=>{grams = kilos * 1000; return grams}
+const weight2 = (kilos)=>{let grams = kilos * 1000; return grams}
 
 weight(4)
- // the diference is that one is a statement, and the other one is a declaration. we can use a function, before we declare if we delcare it in a statemet. this is call hoisting
+ // the diference is that one is a statement, and the other one is a declaration. we can use a function, before we declare, if it is a statemet. this is call hoisting
 
- let weight=(kilo)=>{return kilo*1000}()
+const weight=(kilo)=>{return kilo*1000}(5);
 
 
  /*🌟 Exercise 6 : Fortune teller
@@ -148,9 +150,10 @@ Create a self invoking function that takes 4 arguments: number of children, part
 The function should display in the DOM a sentence like "You will be a <job title> in <geographic location>, and married to <partner's name> with <number of children> kids."
 */
 
-((numOfChildren, partnerName, location, jobTitle)=>{
-    let span = document.createElement("span")
+const future = ((numOfChildren, partnerName, location, jobTitle)=>{
+    let span = document.createElement("span");
     span.textContent = `You will be a ${jobTitle} in ${location}, and married to ${partnerName} with ${numOfChildren} kids`; 
+    document.body.appendChild(span)
 })(4, "Liat", "Peru", "Lawyer")
 
 /*🌟 Exercise 7 : Welcome
@@ -215,7 +218,7 @@ function makeJuicept1(size){
     return function addIngredients(firstIngredient, secondIngredient, thirdIngredient ){
         let span = document.createElement("span");
         span.textContent = `The client wants a ${size} juice, containing ${firstIngredient}, ${secondIngredient}, ${thirdIngredient}`;
-        document.getElementsByTagName("body")[0].appendChild(span)
+        document.body.appendChild(span)
 
     };
 }
