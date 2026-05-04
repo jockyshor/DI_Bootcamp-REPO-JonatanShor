@@ -46,6 +46,6 @@ gameInfo.forEach((user)=>{if(user.score > 5){winners.push(user.username)}});
 //3. Find and display the total score of the users. (Hint: The total score is 71)
 
 
-totalScore = 0;
+let totalScore = 0;
 gameInfo.forEach((user)=>{totalScore += user.score});
 
