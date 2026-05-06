@@ -1,0 +1,98 @@
+<!--  Exercise 1-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="submit" id="form1" method="get">
+        <label for="name">Name</label>
+        <br>
+        <input id="name" type="text">
+        <br>
+        <br>
+        <label for="comment">Comment</label>
+        <br>
+        <textarea id="comment" type="text"></textarea>
+        <br>
+        <br>
+        <button type ="submit">Send</button>
+    </form>
+    
+
+
+
+<!-- because the method on the form is "get", then we will se all the input in the ulr as query parameters-->
+
+
+<!-- Exercise 2
+ Use the same form structure as Exercise 1.
+When you click the Send button, the form will be submitted with a POST method.(you can use the same HTML file for the action url)
+Where will the sent data appear? Hint : Look at the Network Tab-->
+
+<!--
+    <form action="submit" id="form1" method="post">
+        <label for="name">Name</label>
+        <br>
+        <input id="name" type="text">
+        <br>
+        <br>
+        <label for="comment">Comment</label>
+        <br>
+        <textarea id="comment" type="text"></textarea>
+        <br>
+        <br>
+        <button type ="submit">Send</button>
+    </form>
+    
+</body>
+-->
+<!-- The data will appear in the payload, which we can see in the network in the developer tools of chrome, but what is reallly important to understand, is that this daata will be sent directly to the server, in a more secure, not limited and hidden in the request body. this is good to use for paswords an things we dont want to share
+ also, its important to note, that it will probable be translated into a JSON type object, so it can be sent in a corect format for other programs to understant (in the backend of our app) -->
+
+
+
+ <!--
+ 🌟 Exercise 3 : JSON Mario
+Instructions
+Using this code:
+
+-->
+<script>
+const marioGame = {
+  detail : "An amazing game!",
+  characters : {
+      mario : {
+        description:"Small and jumpy. Likes princesses.",
+        height: 10,
+        weight: 3,
+        speed: 12,
+      },
+      bowser : {
+        description: "Big and green, Hates princesses.",
+        height: 16,
+        weight: 6,
+        speed: 4,
+      },
+      princessPeach : {
+        description: "Beautiful princess.",
+        height: 12,
+        weight: 2,
+        speed: 2,
+      }
+  },
+}
+
+//Convert this JS object into a JSON object. What happens to the nested objects ?
+let JSONObj = JSON.stringify(marioGame) // The nested objects, are converted automatically and appear on the json 
+
+//Convert and pretty print this JS object into a JSON object. Hint : Check out the JSON lesson on the platform.
+let prettyJSONObj = JSON.stringify(marioGame, null, 2)
+//Use your web inspector to add a breakpoint. Check the values of the JSON object in the debugger. -- they are much more readble
+
+</script>
+
+</body>
+</html>
