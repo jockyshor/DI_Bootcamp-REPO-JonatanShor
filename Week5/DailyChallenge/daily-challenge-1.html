@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="submit" id="form1">
+        <label for="name">Name</label><input id="name" type="text">
+        <label for="lastname">Last name</label><input id="lastname" type="text">
+        <button type ="submit">Send</button>
+    </form>
+    <script>
+        let form = document.getElementById("form1")
+        let inputName = document.getElementById("name");
+        let inputLast = document.getElementById("lastname");
+
+        function retrieve(e){
+            e.preventDefault()
+            let infoObj = {
+                name: inputName.value,
+                lastname: inputLast.value
+            };
+            let jsonNameAndLastName =JSON.stringify(infoObj);
+            let newP = document.createElement("p");
+            newP.textContent = jsonNameAndLastName;
+            document.body.appendChild(newP);
+            
+        }
+
+        form.addEventListener("submit", retrieve)
+
+
+    </script>
+</body>
+</html>
+
+
