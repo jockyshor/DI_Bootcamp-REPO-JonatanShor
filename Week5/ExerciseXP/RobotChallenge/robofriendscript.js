@@ -138,7 +138,8 @@ function renderSpecificRobots(robotList){
 
         let cardDiv = document.createElement("div");
         cardDiv.className = "col s12 m6 l4";
-        cardDiv.style.marginBottom = "20px"
+        cardDiv.style.marginBottom = "20px";
+        
 
         let robotCard = document.createElement("div");
         robotCard.className = "card blue-grey darken-1";
