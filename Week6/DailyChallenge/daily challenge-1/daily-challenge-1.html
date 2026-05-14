@@ -6,13 +6,28 @@
     <title>Document</title>
 
 </head>
+<style>
+    .button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  cursor: pointer;
+  gap: 20px;
+}
+
+</style>
 <body>
-    <form action="submit" id="mainform">
+    <form action="submit" id="mainform" style="font-size: 2rem;">
         <label for="text">Type Category</label>
-        <input type="text" id="categoryInput">
+        <input style = "width: 400px; height: 45px;"type="text" id="categoryInput">
         <br>
         <br>
-        <button id="generateBtn">Create</button>
+        <button class="button"id="generateBtn">Create</button>
     </form>
 <div id="gifContainer">
 
@@ -20,7 +35,7 @@
 <br>
 <br>
 <br>
-<button id="deleteAllBtn">Delete All</button>
+<button class="button" id="deleteAllBtn">Delete All</button>
     <script src="daily-challenge-1-script.js"></script>
 </body>
 </html>

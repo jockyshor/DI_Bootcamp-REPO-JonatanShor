@@ -22,17 +22,26 @@ Allow the user to remove all of the GIFs by clicking a DELETE ALL button.*/
         let imgInner = jsObj.data[0].images.fixed_height.url
 
         let div = document.createElement("div");
+        div.style.display = "flex";
+        div.style.padding = "10px";
+        div.style.textAlign = "center";
+        div.style.alignItems = "center";
+        div.style.gap = "10px"
         container.appendChild(div);
 
-        let dltBtn = document.createElement("btn");
-        ;
+        let dltBtn = document.createElement("btn"); 
+        dltBtn.className = "button"
+    
 
-        dltBtn.innerHTML = "Delete";
+        dltBtn.textContent = "Delete";
+        
+
+        
         let img = document.createElement ("img");
         img.src = imgInner
         div.appendChild(img);
         div.appendChild(dltBtn)
-        
+
         dltBtn.addEventListener( "click", function () { 
             div.remove() })
         
