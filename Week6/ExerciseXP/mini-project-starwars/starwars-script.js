@@ -12,7 +12,7 @@ async function findSomeone(e){
     div.innerHTML = ""
 
     let loader = document.createElement("i");
-    loader.className = "fa-solid fa-cog fa-spin fa-spin-reverse";
+    loader.className = "fa-solid fa-sync fa-spin";
     loader.style.display = "inline";
     div.appendChild(loader);
 

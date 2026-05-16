@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<body>
+<style>
+    body{
+        background-image: url(wallet-top-coins-with-copy-space.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+          display: grid;
+        place-items: center; 
+        min-height: 100vh; 
+        margin: 0;
+    }
+    h1, h4{
+        color: white;
+        font-size: 3rem;
+    }
+    select, input, button{
+        font-size: larger;
+    }
+</style>
+    <h1>Currency Converter</h1>
+
+
+    <h4>From:</h4>
+        <select name="from" id="convertFrom">
+            <option value="">Select</option>
+        </select>
+<!-- choosing from a list mechanism-->
+<br>
+
+    <h4>To:</h4>
+        <select name="to" id="convertTo">
+            <option value="">Select</option> 
+        </select>
+<!-- choosing from a list mechanism-->
+<br>
+
+    <h4>Amount</h4>
+    <div style = "display: flex;">
+    <input type="number" id="amountInput">
+    <button id="convert">Convert</button>
+    </div>
+
+
+<h4 style="color: white;" id="finalResponse"></h4>
+
+<script src="currency-converter-script.js"></script>
+</body>
+</html>
