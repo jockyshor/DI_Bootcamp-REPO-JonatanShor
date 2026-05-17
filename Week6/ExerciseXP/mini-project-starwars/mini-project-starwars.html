@@ -5,15 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    
+    <link href="https://fonts.cdnfonts.com/css/sega-logo-font" rel="stylesheet">
 </head>
-<body>
-    <div id = displayContainer>
+<style>
+    body{
+    background-image: url(starwarsBackground.avif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-items: center; 
+    min-height: 100vh; 
+    margin: 0;
+    }
+
+    button {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: #cfef00;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    }
+
+    button:hover {
+    background: #c4e201;
+    }
+
+    button > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+    }
+
+    button:hover svg {
+    transform: translateX(5px);
+    }
+
+    button:active {
+    transform: scale(0.95);
+    }
+
+    #displayContainer{
+        font-family:sans-serif;
+        color: white;
+        font-size: 1.5rem;
         
+    }
+   
+</style>
+<body>
+    <h1 style="font-family: 'SEGA LOGO FONT', sans-serif; color: yellow; font-size: 4rem; letter-spacing: 0.05em ">Starwars Finder</h1>
+    <div id = displayContainer style="place-items: center">
     </div>
-    <br>
-    <br>
-    <br>
     <button id = "findSomeone"> Find Someone</button>
 
     <script src="starwars-script.js"></script>
