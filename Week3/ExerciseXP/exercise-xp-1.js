@@ -9,17 +9,17 @@ At the end, console.log the sum of all numbers that are divisible by 23.*/
 
 const displayArr = []
 function displayNumbersDivisible(){
-   
     for (let i = 0; i <= 500; i++ ){
-if (i%23 === 0){displayArr.push(i)}
-    }
-    console.log(displayArr)
+    if (i%23 === 0){displayArr.push(i)}
+    };
+    console.log(displayArr);
+    const sum = displayArr.reduce((accumulator, currentValue)=>{
+    return accumulator + currentValue});
+
+    console.log(sum)
 }
 
-const sum = displayArr.reduce((accumulator, currentValue) => {
-  return accumulator + currentValue;
 
-console.log(sum)
 
 
 //🌟 Exercise 2 : Shopping List
@@ -59,7 +59,7 @@ let totalBill = 0;
 for (item of shoppingList){
     if (stock[item] !== undefined && stock[item] > 0){
         stock[item] -= 1;
-        totalBill += price[item]
+        totalBill += prices[item]
     }
 }
 return totalBill
@@ -221,7 +221,7 @@ console.log(document.getElementById("container"))
 
 let firstUl = document.getElementsByClassName("list")[0]
 
-firstUl[1][0].innerHTML = "Richard"
+firstUl.children[1].textContent = "Richard"
 
 let secondUl = document.getElementsByClassName("list")[1]
 
@@ -242,7 +242,7 @@ const div = document.getElementById("container")
 
 div.setAttribute("style", "background-color: lightblue; padding: 30px;")
 
-secondUl.children[secondUl.length].style.display = "none";
+secondUl[2].style.display = "none";
 
 firstUl.children[1].style.border = "2px solid blue";
 
@@ -279,19 +279,19 @@ document.getElementById("navBar").setAttribute("id", "socialNetworkNavigation");
 
 let ul = document.getElementsByTagName("ul")[0];
 
-let newli = document.createElement("li");
-let newanchortag = document.createElement("a");
-newanchortag.textContent = "href="#">LogOut"
+let newLi = document.createElement("li");
+let newAnchorTag = document.createElement("a");
+newAnchortag.textContent = `href="#">LogOut`;
 
-newanchortag.appendChild(newanchortaginfo);
+newAnchorTag.appendChild(newanchortaginfo);
 
-newli.appendChild(newanchortag);
+newLi.appendChild(newanchortag);
 
 ul.appendChild(newli);
 
 let forDisplay = [ul.firstElementChild.textContent, ul.lastElementChild.textContent];
 
-console.log(forDisplay)
+console.log(forDisplay);
 
 /* EXERCISE 7
 
@@ -314,21 +314,21 @@ Example: HarryPotter written by JKRolling.
 The width of the image has to be set to 100px.
 If the book is already read. Set the color of the book’s details to red.
 */
-let section = document.getElementsByClassName("listBooks")
+let section = document.getElementsByClassName("listBooks")[0]
 
 let allBooks = [
-{title: "Harry Potter",
-author: "JK Rolling",
-image: "https.....img.harry",
-alreadyRead: false},
-{title: "El Alquimista",
-author: "Paulo Cohelo",
-image: "https.....imagen.png",
-alreadyRead: false},
-{title: "Viaje al centro de la tierra",
-author: "Julio Verne",
-image: "https....foto.png.",
-alreadyRead: false}
+    {title: "Harry Potter",
+    author: "JK Rolling",
+    image: "https.....img.harry",
+    alreadyRead: false},
+    {title: "El Alquimista",
+    author: "Paulo Cohelo",
+    image: "https.....imagen.png",
+    alreadyRead: false},
+    {title: "Viaje al centro de la tierra",
+    author: "Julio Verne",
+    image: "https....foto.png.",
+    alreadyRead: false}
 ]
 
 function renderBook(bookDict){
@@ -342,5 +342,4 @@ function renderBook(bookDict){
     if (bookDict.alreadyRead === true){divForBook.style ="color: red"}
     section.appendChild(divForBook)
 }
-renderBook(allBooks[0])
-renderBook(allBooks[1])
+allBooks.forEach((book)=>{renderBook(book)});
