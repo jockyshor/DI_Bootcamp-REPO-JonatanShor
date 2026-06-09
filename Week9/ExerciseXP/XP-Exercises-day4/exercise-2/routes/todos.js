@@ -24,7 +24,7 @@ router.post('/',(req, res)=>{
 
     const newTodo = {
         id: todos.length + 1, 
-        task: task.task.trim(),
+        task: task.trim(),
         completed: false 
     };
 
@@ -38,7 +38,7 @@ router.post('/',(req, res)=>{
 router.put('/:id', (req, res)=>{
     const id = Number(req.params.id);
 
-    const index = todos.findIndexndex(task=>task.id === id);
+    const index = todos.findIndex(task=>task.id === id);
 
     if(index === -1){
         return res.status(404).json({error: "task not found"});

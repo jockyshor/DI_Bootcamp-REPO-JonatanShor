@@ -52,9 +52,9 @@ router.put('/:id', (req, res)=>{
         author: req.body.author
     };
 
-    todos[index]= updatedTask;
+    booksArr[index]= updatedBook;
 
-    res.status(200).json('Task Updated Succesfully')
+    res.status(200).json('Book Updated Succesfully')
 })
 
 router.delete('/:id',(req, res)=>{
