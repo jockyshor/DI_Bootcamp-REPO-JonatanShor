@@ -22,6 +22,9 @@ type Address ={
 
 type PersonWithAddress = Person & Address;
 
+const personAddress: PersonWithAddress = { name: 'John Doe', age: 30, street: '123 Main St', city: 'Anytown' };
+
+
 // 🌟 Exercise 2: Type Guards with Union Types
 // What You Will Learn
 // Use type guards to handle different types.
@@ -52,7 +55,7 @@ function describeValue(param: number | string ):string{
 
 let someValue: any = 234;
 
-let castedValue: string = String(someValue)
+let castedValue: string = someValue as string
 
 console.log(castedValue);
 
@@ -65,7 +68,8 @@ console.log(castedValue);
 // Create a function getFirstElement that takes an array of number | string and uses type assertions to return the first element as a string. Test with arrays of mixed types.
 
 function getFirstElement(arr: (number | string)[]):string{
-    return (String(arr[0] as string))
+    let response: string = arr[0] as string
+    return response;
 }
 
 const prueba1 = getFirstElement(["hola", 2, 3]);  
@@ -84,11 +88,11 @@ console.log(prueba2);
 // Create a generic function logLength that takes a parameter of type T constrained to types with a length property (like string or Array).
 //  The function should log the length.
 
-interface HasLenght{
+interface HasLength{
 lenght: number;
 }
 
-function logLenght<T extends HasLenght>(parameter: T): void{
+function logLength<T extends HasLength>(parameter: T): void{
     console.log(parameter.lenght)
 }
 
