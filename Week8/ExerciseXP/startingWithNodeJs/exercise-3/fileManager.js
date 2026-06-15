@@ -20,11 +20,30 @@
 
 // Run app.js and verify that the file reading and writing operations are successful.
 
-import { fs } from 'fs';
+const fs = require ('fs');
 
 
-let read = fs.readFile();
-let write = fs.writeFile();
+function rFile(fileToRead){ 
+    fs.readFile(fileToRead, 'utf8', (err, data) => {
+    if (err) {
+    console.error('Error reading file:', err);
+    return;
+  }
+  console.log('File content:', data);
+  });
+}
+
+
+async function wFile(fileToWrite, textToInsert){
+     try {
+    await fs.writeFile(fileToWrite, textToInsert, 'utf8');
+    console.log('Files created successfully');
+  } catch (err) {
+    console.error('Error writing files:', err);
+  }
+}
 
 
 
+
+module.exports = { rFile, wFile};
