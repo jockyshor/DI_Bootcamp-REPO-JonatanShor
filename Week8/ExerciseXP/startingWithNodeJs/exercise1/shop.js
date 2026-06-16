@@ -13,7 +13,13 @@
 const products = require(`./product.js`);
 
 function searchProduct(prodName){
-   return products.find((prod)=>prod.name === prodName)
+   let response = products.find((prod)=>prod.name === prodName);
+   if(response){
+      return response;
+   }
+   else{
+      return "Product not found"
+   }
 }
 
 console.log(searchProduct("Wireless Noise-Canceling Headphones"));
