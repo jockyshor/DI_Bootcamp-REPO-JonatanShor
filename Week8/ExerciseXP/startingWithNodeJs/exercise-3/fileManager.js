@@ -36,7 +36,7 @@ function rFile(fileToRead){
 
 async function wFile(fileToWrite, textToInsert){
      try {
-    await fs.writeFile(fileToWrite, textToInsert, 'utf8');
+    await fs.promises.writeFile(fileToWrite, textToInsert, 'utf8');
     console.log('Files created successfully');
   } catch (err) {
     console.error('Error writing files:', err);
